@@ -34,17 +34,17 @@ ament_export_dependencies(Eigen3)
 
 ### Edit your package.xml
 
-Add build dependencies to both this package and Eigen3 to your `package.xml`.
+Add a buildtool dependency to this package, and a build dependency to Eigen3 to your `package.xml`.
 
 ```xml
-<build_depend>eigen3_cmake_module</build_depend>
+<buildtool_depend>eigen3_cmake_module</buildtool_depend>
 <build_depend>Eigen3</build_depend>
 ```
 
-If your package uses Eigen3 in public headers, then **also add** `<build_export_depend>` so downstream packages depend on both this package and `Eigen3`.
+If your package uses Eigen3 in public headers, then **also add** these tags so downstream packages also depend on this package and `Eigen3`.
 
 ```xml
-<build_export_depend>eigen3_cmake_module</build_export_depend>
+<buildtool_export_depend>eigen3_cmake_module</buildtool_export_depend>
 <build_export_depend>Eigen3</build_export_depend>
 ```
 
