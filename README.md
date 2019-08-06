@@ -48,4 +48,4 @@ If your package uses Eigen3 in public headers, then **also add** these tags so d
 <build_export_depend>eigen</build_export_depend>
 ```
 
-`<exec_depend>` are not necessary because `Eigen3` is a header only library.
+`<exec_depend>` is not necessary because `Eigen3` is a header only library.
