@@ -5,7 +5,7 @@ This enables `ament_export_dependencies(Eigen3)` and `ament_target_dependencies(
 
 ## Using this package
 
-This section assume you're using [ament_cmake](https://github.com/ament/ament_cmake).
+This section assumes you're using [ament_cmake](https://github.com/ament/ament_cmake).
 
 ### Edit your CMakeLists.txt
 In your `CMakeLists.txt`, call `find_package()` on this package using `REQUIRED`; then find `Eigen3`.
@@ -48,4 +48,4 @@ If your package uses Eigen3 in public headers, then **also add** these tags so d
 <build_export_depend>Eigen3</build_export_depend>
 ```
 
-`<run_depend>` are not necessary because `Eigen3` is a header only library.
+`<exec_depend>` are not necessary because `Eigen3` is a header only library.
