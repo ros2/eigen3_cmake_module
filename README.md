@@ -1,6 +1,6 @@
 # eigen3_cmake_module
 
-This package adds a [CMake find module](https://cmake.org/cmake/help/v3.14/manual/cmake-developer.7.html#find-modulesjj) for [Eigen3](https://eigen.tuxfamily.org/dox/) that sets [standard cmake variables](https://cmake.org/cmake/help/v3.5/manual/cmake-developer.7.html#standard-variable-names).
+This package adds a [CMake find module](https://cmake.org/cmake/help/v3.14/manual/cmake-developer.7.html#find-modulesjj) for [Eigen3](https://eigen.tuxfamily.org/dox/) that sets [standard CMake variables](https://cmake.org/cmake/help/v3.5/manual/cmake-developer.7.html#standard-variable-names).
 This enables `ament_export_dependencies(Eigen3)` and `ament_target_dependencies(my_target Eigen3)`.
 
 ## Using this package
