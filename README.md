@@ -38,14 +38,14 @@ Add a buildtool dependency to this package, and a build dependency to Eigen3 to 
 
 ```xml
 <buildtool_depend>eigen3_cmake_module</buildtool_depend>
-<build_depend>Eigen3</build_depend>
+<build_depend>eigen</build_depend>
 ```
 
 If your package uses Eigen3 in public headers, then **also add** these tags so downstream packages also depend on this package and `Eigen3`.
 
 ```xml
 <buildtool_export_depend>eigen3_cmake_module</buildtool_export_depend>
-<build_export_depend>Eigen3</build_export_depend>
+<build_export_depend>eigen</build_export_depend>
 ```
 
 `<exec_depend>` are not necessary because `Eigen3` is a header only library.
