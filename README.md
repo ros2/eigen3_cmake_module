@@ -13,7 +13,7 @@ ROS 2 packages using `Eigen3` should use this package to avoid these problems.
 
 ### Edit your CMakeLists.txt
 In your `CMakeLists.txt`, call `find_package()` on this package using `REQUIRED`.
-Afterwards find `Eigen3` with or without `REQUIRED` as appropriate for your package.
+Afterwards, find `Eigen3` with or without `REQUIRED` as appropriate for your package.
 
 ```CMake
 find_package(eigen3_cmake_module REQUIRED)
