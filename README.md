@@ -1,11 +1,14 @@
 # eigen3_cmake_module
 
+On Ubuntu Bionic the `Eigen3` CMake package offers exported targets and non-standard CMake variables.
+This is a problem for packages using [ament_cmake](https://github.com/ament/ament_cmake).
+Targets using `ament_target_dependencies(my_target Eigen3)` will fail to find `Eigen3` headers at compile time.
+Downstream packages will also fail to find `Eigen3` headers at compile time, even if your package uses `ament_export_dependencies(Eigen3)`.
+
 This package adds a [CMake find module](https://cmake.org/cmake/help/v3.14/manual/cmake-developer.7.html#find-modulesjj) for [Eigen3](https://eigen.tuxfamily.org/dox/) that sets [standard CMake variables](https://cmake.org/cmake/help/v3.5/manual/cmake-developer.7.html#standard-variable-names).
-This enables `ament_export_dependencies(Eigen3)` and `ament_target_dependencies(my_target Eigen3)`.
+ROS 2 packages using `Eigen3` should use this package to avoid these problems.
 
 ## Using this package
-
-This section assumes you're using [ament_cmake](https://github.com/ament/ament_cmake).
 
 ### Edit your CMakeLists.txt
 In your `CMakeLists.txt`, call `find_package()` on this package using `REQUIRED`.
