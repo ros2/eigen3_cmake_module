@@ -2,6 +2,7 @@
 
 On Ubuntu Bionic, the `Eigen3` CMake package offers exported targets and non-standard CMake variables.
 This is a problem for packages using [ament_cmake](https://github.com/ament/ament_cmake).
+
 Targets using `ament_target_dependencies(my_target Eigen3)` will fail to find `Eigen3` headers at compile time.
 Downstream packages will also fail to find `Eigen3` headers at compile time, even if your package uses `ament_export_dependencies(Eigen3)`.
 
