@@ -18,15 +18,26 @@
 include(FindPackageHandleStandardArgs)
 
 # Use Eigen3Config.cmake to do most of the work
-find_package(Eigen3 CONFIG)
+find_package(Eigen3 CONFIG QUIET)
 
-find_package_handle_standard_args(
-  Eigen3
-  VERSION_VAR
-    EIGEN3_VERSION_STRING
-  REQUIRED_VARS
-    EIGEN3_FOUND
-)
+if(EIGEN3_INCLUDE_DIR AND PACKAGE_VERSION AND NOT EIGEN3_FOUND)
+  # Special case for Eigen 3.3.4 chocolately package
+  find_package_handle_standard_args(
+    Eigen3
+    VERSION_VAR
+      PACKAGE_VERSION
+    REQUIRED_VARS
+      EIGEN3_INCLUDE_DIR
+  )
+else()
+  find_package_handle_standard_args(
+    Eigen3
+    VERSION_VAR
+      EIGEN3_VERSION_STRING
+    REQUIRED_VARS
+      EIGEN3_FOUND
+  )
+endif()
 if(EIGEN3_FOUND)
   # Set standard variable names
   # https://cmake.org/cmake/help/v3.5/manual/cmake-developer.7.html#standard-variable-names
