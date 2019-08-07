@@ -8,14 +8,16 @@ This enables `ament_export_dependencies(Eigen3)` and `ament_target_dependencies(
 This section assumes you're using [ament_cmake](https://github.com/ament/ament_cmake).
 
 ### Edit your CMakeLists.txt
-In your `CMakeLists.txt`, call `find_package()` on this package using `REQUIRED`; then find `Eigen3`.
+In your `CMakeLists.txt`, call `find_package()` on this package using `REQUIRED`.
+Afterwards find `Eigen3` with or without `REQUIRED` as appropriate for your package.
 
 ```CMake
 find_package(eigen3_cmake_module REQUIRED)
 find_package(Eigen3)
 ```
 
-If your library or executable uses `Eigen3`, then call `ament_target_dependencies()` to give it access to the `Eigen3` headers.
+#### Using with ament_cmake
+If your package uses [ament_cmake](https://github.com/ament/ament_cmake), then use `ament_target_dependencies()` to give your library or executable targets access to the `Eigen3` headers.
 
 ```CMake
 # add_library(my_thing ...)
@@ -25,11 +27,39 @@ If your library or executable uses `Eigen3`, then call `ament_target_dependencie
 ament_target_dependencies(my_thing Eigen3)
 ```
 
-If your package uses Eigen3 in public headers, then call `ament_export_dependencies()` on this package, and afterwards do the same for `Eigen3`.
+If `Eigen3` appears in headers installed by your package, then downstream packages will need the `Eigen3` headers too.
+Call `ament_export_dependencies()` on this package, and afterwards do the same for `Eigen3`.
 
 ```CMake
 ament_export_dependencies(eigen3_cmake_module)
 ament_export_dependencies(Eigen3)
+```
+
+#### Using without ament_cmake
+
+If your package does not use `ament_cmake`, then use `target_include_directories()` to give your targets access to the `Eigen3` headers.
+
+```CMake
+target_include_directories(my_target PUBLIC "${Eigen3_INCLUDE_DIRS}")
+```
+
+If `Eigen3` is used in headers installed by your package, then your `<project>-config.cmake` must find both this package and `Eigen3`.
+Afterwards the `Eigen3` headers should be added to your package's include variable.
+
+```CMake
+find_package(eigen3_cmake_module)
+if (NOT eigen3_cmake_module_FOUND)
+  set(your_package_name_FOUND 0)
+  return()
+endif()
+
+find_package(Eigen3)
+if (NOT Eigen3_FOUND)
+  set(your_package_name_FOUND 0)
+  return()
+endif()
+
+list(APPEND your_package_name_INCLUDE_DIRS ${Eigen3_INCLUDE_DIRS})
 ```
 
 ### Edit your package.xml
