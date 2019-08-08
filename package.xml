@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>eigen3_cmake_module</name>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
   <description>Exports a custom CMake module to find Eigen3.</description>
 
   <author email="sloretz@openrobotics.org">Shane Loretz</author>
