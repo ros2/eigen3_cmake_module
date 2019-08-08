@@ -20,6 +20,12 @@ include(FindPackageHandleStandardArgs)
 # Use Eigen3Config.cmake to do most of the work
 find_package(Eigen3 CONFIG QUIET)
 
+get_cmake_property(_variableNames VARIABLES)
+list (SORT _variableNames)
+foreach (_variableName ${_variableNames})
+    message(STATUS "${_variableName}=${${_variableName}}")
+endforeach()
+
 if(EIGEN3_INCLUDE_DIR AND PACKAGE_VERSION AND NOT EIGEN3_FOUND)
   # Special case for Eigen 3.3.4 chocolately package
   find_package_handle_standard_args(
