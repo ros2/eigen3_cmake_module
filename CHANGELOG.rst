@@ -2,6 +2,12 @@
 Changelog for package eigen3_cmake_module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Mirror rolling to master
+* Update maintainers (`#4 <https://github.com/ros2/eigen3_cmake_module/issues/4>`_)
+* Contributors: Audrow Nash, methylDragon
+
 0.2.0 (2022-04-29)
 ------------------
 
