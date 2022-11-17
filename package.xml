@@ -4,7 +4,9 @@
   <version>0.2.1</version>
   <description>Exports a custom CMake module to find Eigen3.</description>
 
-  <maintainer email="brandon@openrobotics.org">Brandon Ong</maintainer>
+  <maintainer email="scott@openrobotics.org">Scott K Logan</maintainer>
+
+  <author email="brandon@openrobotics.org">Brandon Ong</author>
   <author email="sloretz@openrobotics.org">Shane Loretz</author>
 
   <license>Apache License 2.0</license>
