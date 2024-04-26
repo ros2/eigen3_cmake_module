@@ -2,6 +2,9 @@
 Changelog for package eigen3_cmake_module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.3.0 (2023-04-27)
 ------------------
 
