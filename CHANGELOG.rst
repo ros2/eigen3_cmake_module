@@ -2,6 +2,11 @@
 Changelog for package eigen3_cmake_module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.0 (2025-04-25)
+------------------
+* Remove CODEOWNERS and mirror-rolling-to-master workflow. (`#8 <https://github.com/ros2/eigen3_cmake_module/issues/8>`_)
+* Contributors: Chris Lalancette
+
 0.4.0 (2024-04-26)
 ------------------
 
