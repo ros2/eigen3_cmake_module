@@ -2,6 +2,11 @@
 Changelog for package eigen3_cmake_module
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix cmake deprecation (`#10 <https://github.com/ros2/eigen3_cmake_module/issues/10>`_)
+* Contributors: mosfet80
+
 0.5.0 (2025-04-25)
 ------------------
 * Remove CODEOWNERS and mirror-rolling-to-master workflow. (`#8 <https://github.com/ros2/eigen3_cmake_module/issues/8>`_)
